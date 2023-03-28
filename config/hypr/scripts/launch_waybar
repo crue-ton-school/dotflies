@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+if [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "foot" ];then sudo pkill waybar;
+ else
+  cmd=$(ps aux | grep waybar | head -n 1)
+  IFS="\t" read -r -a arr <<< "$cmd"
+  kill ${arr[1]}
+fi
+
+#waybar -c $HOME/.config/hypr/component/waybar/idkname/config -s $HOME/.config/hypr/component/waybar/idkname/style.css &
+waybar -c $HOME/.config/hypr/component/waybar/simple/config -s $HOME/.config/hypr/component/waybar/simple/style.css &
+

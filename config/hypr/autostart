@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+# variables
+config=$HOME/.config/hypr
+scripts=$config/scripts
+
+# notification daemon
+#dunst &
+
+# waybar
+#zsh $scripts/launch_waybar &
+eww open bar &
+$scripts/tools/dynamic &
+
+# wallpaper
+$scripts/wall $config/wallpapers/tree.jpg &
+
+# effects
+#$scripts/rgb &
+
+# other
+/usr/bin/polkit-dumb-agent &
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &

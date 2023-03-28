@@ -1,0 +1,33 @@
+#!/bin/bash
+
+help() {
+  printf "%b\n" "
+current flags:
+  -r\tregular pokemon
+  -s\tshiny pokemon
+"
+}
+
+if [ $# == 0 ];then
+  help
+fi
+
+while getopts "rs" flag; do
+  case $flag in
+    r)
+	    _c=$(ls $HOME/.local/share/colorscripts/small/regular| fzf --multi --height 18 --preview "cat $HOME/.local/share/colorscripts/small/regular/{1}")
+	    [ -z $_c ] && exit 0
+	    cat $HOME/.local/share/colorscripts/small/regular/$_c
+	    unset _c
+    ;;
+    s)
+	    _c=$(ls $HOME/.local/share/colorscripts/small/shiny| fzf --multi --height 18 --preview "cat $HOME/.local/share/colorscripts/small/shiny/{1}")
+	    [ -z $_c ] && exit 0
+	    cat $HOME/.local/share/colorscripts/small/shiny/$_c
+    ;;
+    \?)
+      help
+      exit 1
+    ;;
+  esac
+done

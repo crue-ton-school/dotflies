@@ -1,0 +1,106 @@
+!! Colorscheme
+
+!! special
+!*.foreground:   #ebdfe8
+!*.background:   #000000
+!*.cursorColor:  #ebdfe8
+
+!! black
+!*.color0:       #000000
+!*.color8:       #938d61
+
+!! red
+!*.color1:       #180d15
+!*.color9:       #75b389
+
+!! green
+!*.color2:       #2e1e2b
+!*.color10:      #5ca4a9
+
+!! yellow
+!*.color3:       #4d3448
+!*.color11:      #768ad8
+
+!! blue
+!*.color4:       #74506c
+!*.color12:      #689ca0
+
+!! magenta
+!*.color5:       #a37299
+!*.color13:      #da4cc1
+
+!! cyan
+!*.color6:       #c8a4c0
+!*.color14:      #a49a4b
+
+!! white
+!*.color7:       #ebdfe8
+!*.color15:      #e18d81
+
+! --- special colors --- !
+*background: #000000
+*foreground: #d9e6f2
+
+! --- standard colors --- !
+
+! black
+*color0: #1b1b1b
+
+! bright_black
+*color8: #3d3d3d
+
+! red
+*color1: #8a5d60
+
+! bright_red
+*color9: #c3a6a7
+
+! green
+*color2: #608a5d
+
+! bright_green
+*color10: #a7c3a6
+
+! yellow
+*color3: #8a875d
+
+! bright_yellow
+*color11: #c3c1a6
+
+! blue
+*color4: #5d608a
+
+! bright_blue
+*color12: #a6a7c3
+
+! magenta
+*color5: #875d8a
+
+! bright_magenta
+*color13: #c1a6c3
+
+! cyan
+*color6: #5d8a87
+
+! bright_cyan
+*color14: #a6c3c1
+
+! white
+*color7: #b4b4b4
+
+! bright_white
+*color15: #f2f2f2
+
+*.font: xft:CaskaydiaCove Nerd Font Mono:size=12
+
+!! URxvt appearence
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.lineSpace: 0
+URxvt.letterSpace: 0
+URxvt.iso14755: false
+
+Xcursor.theme: Simp1e-Adw

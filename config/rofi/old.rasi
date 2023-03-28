@@ -1,0 +1,10 @@
+@theme "/usr/share/rofi/themes/Indego.rasi"
+
+* {
+  modes: "window,run,ssh,drun";
+}
+
+window {
+  width: 30%;
+  height: 30%;
+}

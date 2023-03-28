@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+import math
+import subprocess
+
+try:
+    title = subprocess.check_output(['playerctl', 'metadata', 'xesam:title'], stderr=subprocess.STDOUT)
+    artist = subprocess.check_output(['playerctl', 'metadata', 'xesam:artist'], stderr=subprocess.STDOUT)
+    length = subprocess.check_output(['playerctl', 'metadata', 'mpris:length'], stderr=subprocess.STDOUT)
+except subprocess.CalledProcessError:
+    print("")
+    exit(1);
+
+title = str(title.decode("utf-8")).replace("\n","")
+artist = str(artist.decode("utf-8")).replace("\n","")
+
+length = int(length.decode("utf-8"))
+length = length / 1000000
+
+minutes = length / 60
+minutes = math.trunc(minutes)
+
+seconds = length - (minutes * 60)
+seconds = math.trunc(seconds)
+if (seconds < 10):
+    seconds = "0"+str(seconds)
+
+print(f"{title} - {artist}   {minutes}:{seconds}")

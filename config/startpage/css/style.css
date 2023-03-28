@@ -1,0 +1,61 @@
+
+:root {
+ --bg: #111111;
+ --fg: #dcdccc;
+
+ --col0: #222222;  
+ --col1: #cc9393; 
+ --col2: #7f9f7f;  
+ --col3: #d0bf8f;  
+ --col4: #6ca0a3;  
+ --col5: #dc8cc3;  
+ --col6: #93e0e3;  
+ --col7: #dcdccc;  
+
+ --bcol0: #666666;   
+ --bcol1: #dca3a3;   
+ --bcol2: #bfebbf;  
+ --bcol3: #f0dfaf;  
+ --bcol4: #8cd0d3;   
+ --bcol5: #fcace3;   
+ --bcol6: #b3ffff;
+ --bcol7: #ffffff;   
+}
+
+body {
+  background-color: var(--bg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--fg);
+  transition: 0.6s;
+}
+
+a:hover {
+  color: var(--bcol7);
+  padding-left: 10px;
+}
+
+.link-title {
+  text-decoration: wavy underline var(--bcol7);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 600px;
+  padding-left: 60px;
+  padding-bottom 20px;
+  border-radius: 2px;
+  background-color: var(--col0);
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	white-space: nowrap;
+}

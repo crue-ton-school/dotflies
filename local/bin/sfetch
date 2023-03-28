@@ -1,0 +1,30 @@
+#!/bin/sh
+
+. /etc/os-release
+
+KERNEL=$(uname -r)
+TERMINAL=${TERM##*-}
+PACKAGES=$(pacman -Qq | wc -l)
+
+wm=$XDG_CURRENT_DESKTOP
+[ -z "$XDG_CURRENT_DESKTOP" ] && while read -r line; do
+    [ "${line#exec }" = "$line" ] || wm="${line#exec }"
+done < "$HOME/.xinitrc"
+
+	      r='\e[0m'
+c1='\e[31m'; c2='\e[32m'
+c3='\e[33m'; c4='\e[34m'
+c5='\e[35m'; c6='\e[36m'
+        c8='\e[37m'
+
+palette="$c1██$c2██$c3██$c4██$c5██$c6██$r"
+
+printf "%b\n" "
+$c6      /\\          $c4  $c8▐$r  ${NAME}
+$c6     /  \\         $c8  $c8▐$r  ${KERNEL}
+$c6    /\   \\        $c2  $c8▐$r  ${PACKAGES} (pacman)
+$c6   /      \\       $c3  $c8▐$r  ${SHELL##*/}
+$c6  /   ,,   \\      $r  $c8▐$r  ${TERMINAL}
+$c6 /   |  |  -\\     $c5  $c8▐$r  ${wm}
+$c6/_-''    ''-_\\       $c8▐$r  ${palette}
+"

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+SINK=$(pactl get-default-sink)
+
+case $1 in
+  (toggle-mute)
+    pactl set-sink-mute ${SINK} toggle
+  ;;
+  (up)
+    pactl set-sink-volume ${SINK} +2%
+  ;;
+  (down)
+    pactl set-sink-volume ${SINK} -2%
+  ;;
+esac
