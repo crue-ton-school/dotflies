@@ -26,22 +26,17 @@ install_local() {
 install_home() {
   set -x
   cp ./zshrc ~/.zshrc
+  cp ./xinitrc ~/.xinitrc
   cp ./Xresources ~/.Xresources
   cp -r ./.zsh ~/.zsh
   cp -r ./.fonts ~/.fonts
   cp -r ./.themes ~/.themes
+  cp -r ./.newsboat ~/.newsboat
   set +x
 }
 
-foo() {
-  set -x
-  printf "bar!"
-  set +x
-}
-
-functions=(foo install_config install_local install_home)
+functions=(install_config install_local install_home)
 questions=(
-  "(foo) bar? [Y/n] "
   "(~/.config) Install Config Folders? [Y/n] "
   "(~/.local) Install Local Folders? [Y/n] "
   "(~) Install Home Folders? [Y/n] "
